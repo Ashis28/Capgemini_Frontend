@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CricketGame</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="top">
+        <p>Choose whom to bat</p>
+        <select name="selection" id="playerSelect" style="margin: 10px;">
+        <option value="1">User</option>
+        <option value="2">Computer</option>
+        </select>
+
+        <p id="whoPlaying">🎮 Currently Playing: YOU</p>
+    </div>
+    
+    <input type="text" placeholder="Enter a number" id="userInput">
+    <button onclick="startMatch()">Enter</button>
+    <p id="errorMSG">'ENTER FROM 1-6'</p>
+    <div>
+        <span>BAT</span>
+        <span id="batting">0</span>BALL
+        <span id="balling">0</span>
+
+        <span id="winStatus">Win status</span>
+    </div>
+    <ul id="ballHistory">Ball History</ul>
+
+    <button id="clear" onclick="clearHISTORY()">CLEAR</button>
+    <p id="winCnt">Win Count: 0</p>
+    <script src="./1.Cricket.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var laptops = [
+            {id:"1",brand:"HP",price : 100000,quantity:8},
+            {id:"2",brand:"DELL",price : 80000,quantity:5},
+            {id:"3",brand:"LENOVO",price : 120000,quantity:7},
+            {id:"4",brand:"ASUS",price : 80000,quantity:7}
+        ]
+    </script>
+    <button onclick="method3()">View Laptops Dynamic</button>
+    <br>
+
+    <table id="t1" style="display: none; border: 2px solid blue;">
+        <th>ID</th>
+        <th>brand</th>
+        <th>Price</th>
+        <th>quanity</th>
+        <th>Liked</th>
+    </table>
+
+    <table id="t2" style="display: none; border: 2px solid blue;">
+        <th>ID</th>
+        <th>brand</th>
+        <th>Price</th>
+        <th>quanity</th>
+        <th>Liked</th>
+    </table>
+    <table id="t3" style="display: none; border: 2px solid blue;">
+        <th>ID</th>
+        <th>brand</th>
+        <th>Price</th>
+        <th>quanity</th>
+        <th>Liked</th>
+    </table>
+    <Button onclick="liekd()"></Button>
+
+    <script>
+        function liked(btn){
+                var tr = btn.closest('tr');
+                tr.style.backgroundColor = 'green';
+
+                var t1 = document.getElementById('t1');
+                var clone = tr.cloneNode(true); // true = deep copy
+                t1.append(clone);
+            }
+
+        function disLiked(btn){
+                var tr = btn.closest('tr');
+                tr.style.backgroundColor = 'red';
+
+                var t2 = document.getElementById('t2');
+                var clone = tr.cloneNode(true);
+                t2.append(clone);
+            }
+        function method3(){
+            let t3 = document.getElementById('t3');
+            t3.style.display = 'inline';
+            for(let laptop of laptops){
+                var tr = document.createElement('tr');
+                for(let key of Object.keys(laptop)){
+                    tr.insertCell().innerText = laptop[key];
+                }
+                var tdLike = document.createElement('td');
+                var buttons = '<Button id = "liked" onclick="liked(this)">❤️</Button"> <Button id = "disliked" onclick="disLiked(this)">👎</Button">';
+                tdLike.innerHTML = buttons;
+                tr.append(tdLike);
+                t3.appendChild(tr);
+            }
+        }
+    </script>
+    <button onclick="showLiked()">showLiked</button>
+    <button onclick="showDisliked()">showDislied</button>
+    <button onclick="reset()">rest</button>
+    <script>
+        function showLiked(){
+            var t1 = document.getElementById('t1');
+            t1.style.display = 'block';
+        }
+        function showDisliked(){
+            var t2 = document.getElementById('t2');
+            t2.style.display = 'block';
+        }
+        function reset(){
+            var t1 = document.getElementById('t1');
+            var t2 = document.getElementById('t2');
+            for(let i=1;i<4;i++){
+               var tr = t1.childNodes;
+               console.log(tr[0],tr[1],tr[2]);
+            }
+        }
+    </script>
+</body>
+</html>

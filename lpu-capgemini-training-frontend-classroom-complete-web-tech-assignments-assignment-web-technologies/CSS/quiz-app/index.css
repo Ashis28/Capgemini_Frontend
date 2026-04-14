@@ -1,0 +1,110 @@
+main{
+    background-color: antiquewhite;
+    height: 100px;
+    justify-content: center;
+}
+#first{
+    background-color: #F0F8FF;
+    font-weight: 10px;
+    text-align: center;
+}
+footer{
+    margin-top: px;
+    background-color: rgb(228, 207, 189);
+    text-align: center;
+}
+footer > p{
+    background-color: rgb(58, 80, 133) salmon;
+    display: inline-block;
+    margin: 70px;
+}
+.middle{
+    background-color: rgb(177, 174, 169);
+    text-align: center;
+    padding: 20px;
+}
+.clearAll{
+    display: flex;
+    background-color: rgb(197, 182, 145);
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+#q1:checked ~ #q1a{
+    display: inline;
+}
+#q1:checked ~ #q1wa{
+    display: none;
+}
+
+#q1w:checked ~ #q1a{
+    display: none;
+}
+#q1w:checked ~ #q1wa{
+    display: inline;
+}
+
+#q1a{
+    display: none;
+    background-color: green;
+}
+
+#q1wa{
+    display: none;
+    background-color: red;
+}
+
+#q2a:checked ~ #q2_a{
+    display: inline;
+    background-color: antiquewhite;
+}
+#q2b:checked ~ #q2_b{
+    display: inline;
+    background-color: aquamarine;
+}
+#q2c:checked ~ #q2_cd, 
+#q2d:checked ~ #q2_cd {
+    display: inline;
+    background-color: blanchedalmond;
+}
+#q2_a{
+    display: none;
+}
+#q2_b{
+    display: none;
+}
+#q2_cd{
+    display: none;
+}
+
+
+.middle2{
+    background-color: cornsilk;
+    height: 20vh;
+    padding-top: 80px;
+    text-align: center;
+}
+#q3_1{
+    display: none;
+}
+#q3_2{
+    display: none;
+}
+
+#q3:checked ~ #q3_1{
+    display: inline;
+}
+
+#q3_:checked ~ #q3_2{
+    display: inline;
+}
+
+
+
+#clear:checked ~ #middleEast{
+    display: none;
+}
+/* Don't hide the button itself! */
+button:hover {
+    background-color: antiquewhite; /* Just change color, no display:none */
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome user</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 id="successMsg">Sign Up Successful</h1>
+    <h2>Sign Up</h2>
+
+    <h5>UserName</h5>
+    <input type="text" id="userName" placeholder="Enter ur name">
+    <p id="userWarning">Username must be between 3 and 25 characters</p>
+    <h5>Email</h2>
+    <input type="text" id="email" placeholder="enter email id">
+    <p id="emailWarning">Wrong Email Format</p>
+
+    <h5>Password</h3>
+    <input type="text" id="pwd" placeholder="Enter Password">
+    <p id="pwdWarning1">Password must have at least 8 characters that include
+        at least 1 lower cae character, 1 uppercase character
+        , 1 number and 1 special character in {!@#$%^&}
+    </p>
+    <h3>Confirm password</h2>
+    <input type="text" id="rePwd" placeholder="Reenter your password">
+    <p id="pwdWarning2">pwd doesnot match</p>
+    
+    <br>
+    <button id="signUpBtn" onclick="fetchData()">SIGN UP</button>
+    <script src="./login.js"></script>
+</body>
+</html>

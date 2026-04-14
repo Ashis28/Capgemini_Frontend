@@ -1,0 +1,54 @@
+
+body{
+    background-color: rgb(235, 240, 240);
+}
+p{
+    color: rgb(238, 57, 57);
+}
+#pwdWarning1,#emailWarning,#pwdWarning2,#userWarning{
+    display: none;
+}
+button {
+    background-color: rgb(82, 82, 205);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(60, 60, 180);
+}
+#successMsg{
+    display: none;
+    color: rgb(76, 175, 80);
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+
+h1, h2, h3, h5 {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[style*="red"] {
+    box-shadow: 0 0 6px rgba(244, 67, 54, 0.6);
+}
+
+input[style*="green"] {
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.6);
+}
+

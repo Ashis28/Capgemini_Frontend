@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            display: grid;
+            width: 100%;
+            background-color: rgb(229, 229, 151);
+            grid-template-rows: repeat(3,2fr);
+            grid-template-columns: 2fr 4fr 1fr;
+            gap: 30px;
+            grid-template-areas: 
+            "a a b"
+            "c c d"
+            "e e f";
+        }
+        .child{
+            background-color: antiquewhite;
+            width: 100px;
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child" style="grid-area: a;">1</div>
+        <div class="child" style="grid-area: b;">2</div>
+        <div class="child" style="grid-area: c;">3</div>
+        <div class="child" style="grid-area: d;">4</div>
+        <div class="child" style="grid-area: e;">5</div>
+        <div class="child" style="grid-area: f;">6</div>
+    </div>
+</body>
+</html>
