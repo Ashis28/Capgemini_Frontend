@@ -3,6 +3,7 @@ import typescriptLogo from './assets/typescript.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import { setupCounter, populateLaptops } from './counter.ts'
+import type { User } from './User.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center">
@@ -65,3 +66,33 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 populateLaptops(document.querySelector<HTMLTableElement>('#laptops'),'http://localhost:3434/laptops')
+
+function utitllityMethod(str:String){
+  console.log(`string given is  ${str}`);
+}
+
+var nameStudent = 'Ashish';
+utitllityMethod(nameStudent);
+
+function getData() : Promise<User> | String {
+  //if data is ready from local storage return it
+
+  //else get the data from server and , then return promise
+  var data = localStorage.getItem('mydata');
+  if(data) return data;
+  return fetch('http://localhost:3434/laptops/1').then((response)=>response.json());
+}
+
+function showData(){
+  var data = getData();
+  // narrowing down
+  if(typeof(data)== 'string'){
+    console.log(`from lcoal storage data ${data}`);
+  }
+  //else other wise data is promise
+  if(data instanceof Promise){
+    console.log(typeof(data));
+    data.then((jsonObj)=>console.log('from server',jsonObj));
+  }
+}
+showData();
