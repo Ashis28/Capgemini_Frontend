@@ -30,46 +30,11 @@ export class App {
 
   ];
   
-
-  itemsPerPage = 5;
+  
+  itemsPerPage = 6;
   currentPage = 0;
   pageEnd = this.itemsPerPage;
   customersTemp = this.customers.slice(0,this.itemsPerPage);
-
-  prevPage() {
-  if (this.currentPage - this.itemsPerPage >= 0) {
-    this.currentPage -= this.itemsPerPage;
-  } else {
-    this.currentPage = 0;
-  }
-
-  this.pageEnd = this.currentPage + this.itemsPerPage;
-  this.customersTemp = this.customers.slice(this.currentPage, this.pageEnd);
-  console.log(this.customersTemp);
-}
-
-nextPage() {
-  if (this.pageEnd < this.customers.length) {
-    this.currentPage += this.itemsPerPage;
-    this.pageEnd = this.currentPage + this.itemsPerPage;
-  }
-  else{
-    this.pageEnd = this.customers.length;
-    this.currentPage = this.customers.length-this.itemsPerPage+1;
-  }
-   this.customersTemp = this.customers.slice(this.currentPage, this.pageEnd);
-   console.log(this.customersTemp);
-}
-  isFirstPage(): boolean {
-    return this.currentPage === 0;
-  }
-
-  isLastPage(): boolean {
-    return this.pageEnd == this.customers.length;
-  }
-  onSearchChange() {
-    this.currentPage = 0; // reset page on search
-  }
 
   searchText: string = '';
   get filteredCustomers() {
@@ -77,10 +42,55 @@ nextPage() {
     c.name.toLowerCase().includes(this.searchText.toLowerCase())
   );
 }
-
-  get paginatedCustomers() {
+  
+  get pagignation() {
     const start = this.currentPage;
     return this.filteredCustomers.slice(start, start + this.itemsPerPage);
   }
+  prevPagePagignation(){
+    this.currentPage -= this.itemsPerPage;
+    if(this.currentPage<=0){
+      this.currentPage = 0;
+    }
+  }
+  nextPagePagignation(){
+    if(this.currentPage+this.itemsPerPage < this.filteredCustomers.length){
+      this.currentPage += this.itemsPerPage;
+    }
+    console.log(this.currentPage);
+  }
+  
 
+// prevPage() {
+//   this.currentPage -= this.itemsPerPage;
+//   this.pageEnd -= this.itemsPerPage;
+//   if(this.currentPage<0){
+//     this.currentPage = 0;
+//     this.pageEnd = this.itemsPerPage;
+//   }
+//   this.customersTemp = this.customers.slice(this.currentPage, this.pageEnd);
+// }
+
+// nextPage() {
+//   if (this.currentPage+this.itemsPerPage < this.customers.length) {
+//     this.currentPage = this.pageEnd;
+//     this.pageEnd += this.itemsPerPage;
+//   }
+//   else{
+//     this.pageEnd = this.filteredCustomers.length;
+//     this.currentPage = this.pageEnd-this.itemsPerPage;
+//   }
+//    this.customersTemp = this.customers.slice(this.currentPage, this.pageEnd);
+// }
+  isFirstPage(): boolean {
+    return this.currentPage === 0;
+  }
+
+  isLastPage(): boolean {
+    // return this.pageEnd >= this.filteredCustomers.length;
+    return this.currentPage+this.itemsPerPage>=this.filteredCustomers.length;
+  }
+  onSearchChange() {
+    this.currentPage = 0;
+  }
 }
