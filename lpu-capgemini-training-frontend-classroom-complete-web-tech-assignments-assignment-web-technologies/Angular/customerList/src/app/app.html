@@ -1,0 +1,19 @@
+
+<p>Hello word</p>
+<div class="container">
+  @for(customer of customersTemp;track customer.id){
+    <div class="card">
+      <p><b>ID:</b> {{ customer.id }}</p>
+      <p><b>Name:</b> {{ customer.name }}</p>
+      <p><b>Email:</b> {{ customer.email }}</p>
+      <p><b>Phone:</b> {{ customer.phone }}</p>
+    </div>
+  }
+</div>
+<!-- <p>Page: {{ currentPage }}</p>
+<p>Page: {{ pageEnd }}</p> -->
+
+<button (click)="prevPage()">Previous Paige</button>
+<button (click)="nextPage()">Next Paige</button>
+
+
