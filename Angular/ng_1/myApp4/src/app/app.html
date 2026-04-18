@@ -1,0 +1,12 @@
+<p>my-component works!</p>
+<div class="container">
+  @for (laptop of laptops.slice(startIndex,startIndex+2); track laptop.id) {
+    <div class="card">
+      <p class="brand">{{ laptop.brand }}</p>
+      <p class="model">{{ laptop.model }}</p>
+      <p class="price">₹ {{ laptop.price }}</p>
+    </div>
+  }
+</div>
+<button (click)="increment()">next</button>
+<button (click)="decrement()">previous</button>

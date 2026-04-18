@@ -3,7 +3,7 @@ import typescriptLogo from './assets/typescript.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import { setupCounter, populateLaptops } from './counter.ts'
-import type { User } from './User.ts'
+import type { User,Laptop } from './User.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center">
@@ -96,3 +96,15 @@ function showData(){
   }
 }
 showData();
+
+// 2
+function getAllData():Promise<Laptop[]>{
+  let promise = fetch("http://localhost:3434/laptops")
+  return promise.then((resp)=>resp.json());
+}
+async function showAllData(){
+  var laptops = await getAllData();
+  console.log("This is getting called");
+  console.log("type of laptop is ",typeof(laptops),laptops);
+}
+showAllData()

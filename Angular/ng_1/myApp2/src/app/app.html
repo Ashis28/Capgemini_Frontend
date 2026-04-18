@@ -1,0 +1,12 @@
+
+<p>{{name}}</p>
+<button (click) = "changeName()" >Click Name</button>
+<app-user-details [name]="name"></app-user-details>
+    
+    
+    @for(user of users; track user.name){
+        <!-- {{incrementCount()}} -->
+        <app-user-details (onUpdate) = "parentAction($event)" [name]="user.name" [age]="user.age"  [address]="user.address" [gender]="user.gender" [count]="count"></app-user-details>
+    }
+
+<router-outlet />

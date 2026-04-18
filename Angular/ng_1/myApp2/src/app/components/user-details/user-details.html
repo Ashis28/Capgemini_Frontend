@@ -1,0 +1,17 @@
+<!-- <h4>count : {{count}}</h4> -->
+<p>Name: {{ name }}</p>
+<input type="text" value="{{name}}" [disabled] = "toggle">
+<button (click)="informParent()">Delete User</button>
+<button (click)="edit()">Edit</button>
+<table>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Address</th>
+    <th>Gender</th>
+    <tr>
+        <td>{{name}}</td>
+        <td>{{age}}</td>
+        <td>{{address}}</td>
+        <td>{{gender}}</td>
+    </tr>
+</table>

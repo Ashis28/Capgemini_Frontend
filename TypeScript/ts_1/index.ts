@@ -1,3 +1,4 @@
-export function sqr(n:number):number{
+
+function sqr(n:number):number{
     return n*n;
 }

@@ -1,0 +1,12 @@
+<p>my-component works!</p>
+<div class="container">
+  @for (laptop of laptops_; track laptop.id) {
+    <div class="card">
+      <p class="brand">{{ laptop.brand }}</p>
+      <p class="model">{{ laptop.model }}</p>
+      <p class="price">₹ {{ laptop.price }}</p>
+    </div>
+  }
+</div>
+<h3>{{objct1.name}} {{objct1.id}}</h3>
+<button (click)="updateId(111)">changeId</button>
